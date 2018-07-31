@@ -1,0 +1,29 @@
+<div class="border rounded shadow px-5 py-4 mb-5">
+    <h3 class="text-center mb-4">Потребность в воде</h3>
+    <form name="calc_8">
+        <div class="form-group row">
+            <div class="col-sm-4">Вес</div>
+            <div class="col-6 col-sm-4"><input type="text" class="form-control" name="wg"></div>
+            <div class="col-6 col-sm-4"><select name="opt1" class="form-control" onchange="unit()">
+                <option name="kilograms" value="kilograms" selected="">Килограмм</option>
+                <option name="pounds" value="pounds">Фунтов</option>
+            </select></div>
+        </div>
+        <div class="form-group row">
+            <div class="col-12 text-center"><input type="button" name="ss" value="Рассчитать" onclick="bal()" class="btn btn-info"> <input type="reset" value="Сбросить" class="btn btn-secondary"></div>
+        </div>
+        <div class="form-group row wpcalcresult">
+            <div class="col-sm-4">Миллилитров</div>
+            <div class="col-sm-8"><input name="r2" type="text" class="form-control" readonly></div>
+        </div>
+        <div class="form-group row wpcalcresult">
+            <div class="col-sm-4">Унций</div>
+            <div class="col-sm-8"><input name="r1" type="text" class="form-control" readonly></div>
+        </div>
+        <div class="form-group row wpcalcresult">
+            <div class="col-sm-4">Стаканов</div>
+            <div class="col-sm-8"><input name="r3" type="text" class="form-control" readonly></div>
+        </div>
+    </form>
+</div>
+<script src="/js/calc_8.js"></script>

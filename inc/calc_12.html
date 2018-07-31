@@ -1,0 +1,152 @@
+<div class="border rounded shadow px-5 py-4 mb-5">
+    <h3 class="text-center mb-4">Физическое состояние</h3>
+    <form name="calc12">
+        <div class="form-group row">
+            <div class="col-sm-4">Пол</div>
+            <div class="col-6 col-sm-4 form-check">
+                <input type="radio" class="form-check-input" name="calc12_gender" id="calc12_gender_f" onclick="calc12_gender_set();">
+                <label for="calc12_gender_f" class="form-check-label">Женский</label>
+            </div>
+            <div class="col-6 col-sm-4 form-check">
+                <input type="radio" name="calc12_gender" class="form-check-input" id="calc12_gender_m" onclick="calc12_gender_set();">
+                <label for="calc12_gender_m" class="form-check-label">Мужской</label>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-4">Вес</div>
+            <div class="col-sm-8">
+                <div class="input-group">
+                    <input type="text" id="calc12_weight" name="calc12_weight" class="form-control Parm" value="59" onchange="javascript:calc12_checkInput();">
+                    <div class="input-group-append">
+                        <div class="input-group-text">кг</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-4">Рост</div>
+            <div class="col-sm-8">
+                <div class="input-group">
+                    <input type="text" id="calc12_height" name="calc12_height" class="form-control Parm" value="168" onchange="javascript:calc12_checkInput();">
+                    <div class="input-group-append">
+                        <div class="input-group-text">см</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-4">Возраст</div>
+            <div class="col-sm-8">
+                <div class="input-group">
+                    <input type="text" id="calc12_age" name="calc12_age" value="29" class="form-control Parm" onchange="javascript:calc12_checkInput();">
+                    <div class="input-group-append">
+                        <div class="input-group-text">лет</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-4">Частота пульса в состоянии покоя</div>
+            <div class="col-sm-8"><input type="text" id="calc12_RHR" name="calc12_RHR" value="60" class="form-control Parm" onchange="javascript:calc12_checkInput();"></div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-4">Талия (в самом тонком месте)</div>
+            <div class="col-sm-8">
+                <div class="input-group">
+                    <input type="text" id="calc12_meas_1" name="calc12_meas_1" value="74" class="form-control Parm" onchange="javascript:calc12_checkInput();">
+                    <div class="input-group-append">
+                        <div class="input-group-text">см</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-4">Бёдра (в самой широкой части)</div>
+            <div class="col-sm-8">
+                <div class="input-group">
+                    <input type="text" id="calc12_meas_2" value="97" name="calc12_meas_2" class="form-control Parm"  onchange="javascript:calc12_checkInput();">
+                    <div class="input-group-append">
+                        <div class="input-group-text">см</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-4">Ширина локтя</div>
+            <div class="col-sm-8">
+                <div class="input-group">
+                    <input type="text" id="calc12_meas_3" name="calc12_meas_3" value="6.4" class="form-control Parm"  onchange="javascript:calc12_checkInput();">
+                    <div class="input-group-append">
+                        <div class="input-group-text">см</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-4">Уровень активности</div>
+            <div class="col-sm-8"><select id="calc12_meas_4" name="calc12_meas_4" onchange="javascript:calc12_checkInput();" class="form-control">
+                <option value="Sedentary">малоподвижный</option>
+                <option value="Light" selected="">легкая активность</option>
+                <option value="Moderate">средняя активность</option>
+                <option value="Very">хорошая активность</option>
+                <option value="Extreme">максимальная активность</option>
+            </select></div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-4">Спортивная цель</div>
+            <div class="col-sm-8"><select id="calc12_meas_5" name="calc12_meas_5" onchange="javascript:calc12_checkInput();" class="form-control">
+                <option value="GetFit">придти в форму</option>
+                <option value="LoseWeight" selected="">снижение веса</option>
+                <option value="Endurance">увеличение выносливости</option>
+                <option value="ExcelFit">великолепная форма</option>
+                <option value="Athletic">состязательные занятия спортом</option>
+            </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-4 wpcalcresult">Индекс массы (BMI)</div>
+            <div class="col-sm-8"><b id="calc12_BMI"></b></div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-4 wpcalcresult">BMI классификация</div>
+            <div class="col-sm-8"><b id="calc12_BMIClass"></b></div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-4 wpcalcresult">Отношение талия/бедро</div>
+            <div class="col-sm-8"><b id="calc12_WaistHipRatio"></b></div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-4 wpcalcresult">Телосложение</div>
+            <div class="col-sm-8"><b id="calc12_FrameSize"></b></div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-4 wpcalcresult">Идеальный вес</div>
+            <div class="col-sm-8"><b id="calc12_IdealWgtRng"></b></div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-4 wpcalcresult">Жир тела</div>
+            <div class="col-sm-8"><b id="calc12_FatMass"></b>&nbsp;кг. <br><b id="calc12_BodyFat"></b>&nbsp;%</div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-4 wpcalcresult">Сухая масса тела</div>
+            <div class="col-sm-8"><b id="calc12_LeanMass"></b>&nbsp;кг. <br><b id="calc12_LeanPct"></b>&nbsp;%</div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-4 wpcalcresult">Метаболизм покоя (RMR)</div>
+            <div class="col-sm-8"><b id="calc12_RMRDay"></b>&nbsp;кал./день <br><b id="calc12_RMRHour"></b>&nbsp;кал./час</div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-4 wpcalcresult">Средний актуальный метаболизм</div>
+            <div class="col-sm-8"><b id="calc12_AvgCalDay"></b>&nbsp;кал./день <br><b id="calc12_AvgCalHour"></b>&nbsp;кал./час</div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-4 wpcalcresult">Целевая частота пульса (THR)</div>
+            <div class="col-sm-8"><b id="calc12_TargetHrtRtMin"></b>&nbsp;в минуту <br><b id="calc12_TargetHrtRtSec"></b>&nbsp;в 10 секунд</div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-4 wpcalcresult">Максимальная частота пульса (MHR)</div>
+            <div class="col-sm-8"><b id="calc12_MaxHrtRtMin"></b>&nbsp;в минуту <br><b id="calc12_MaxHrtRtSec"></b>&nbsp;в 10 секунд</div>
+        </div>
+    </form>
+</div>
+<script src="/js/calc_12.js"></script>

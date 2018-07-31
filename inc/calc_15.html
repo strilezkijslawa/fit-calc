@@ -1,0 +1,42 @@
+<div class="border rounded shadow px-5 py-4 mb-5">
+    <h3 class="text-center mb-4">Углеводное окно</h3>
+    <form name="calc15form">
+        <div class="form-group row">
+            <div class="col-sm-4">Ваш вес</div>
+            <div class="col-sm-8">
+                <div class="input-group">
+                    <input type="text" name="calc15_weight" class="form-control">
+                    <input type="hidden" name="calc15_fat1">
+                    <div class="input-group-append">
+                        <div class="input-group-text">кг</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-4">Процент жира</div>
+            <div class="col-sm-8">
+                <div class="input-group">
+                    <input type="text" name="calc15_p_fat1" class="form-control">
+                    <div class="input-group-append">
+                        <div class="input-group-text">%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-12 text-center mt-3">
+                <input class="btn btn-info" type="button" name="calc15_submit" value="Рассчитать" onclick="return calc15_calculate()">
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-12 text-center mt-3">
+                <div id="calc15_color">
+                    Не позднее 2 часов после тренировки<br>
+                    принять <input type="text" name="calc15_res1" style="width:40px"> граммов углеводов.
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<script src="/js/calc_15.js"></script>

@@ -1,0 +1,113 @@
+<div class="border rounded shadow px-5 py-4 mb-5">
+    <h3 class="text-center mb-4">Определение мышечной массы тела</h3>
+    <form name="form">
+        <div class="form-group row">
+            <div class="col-sm-4">Возраст</div>
+            <div class="col-sm-8">
+                <div class="input-group">
+                    <input type="text" size="4" class="form-control" name="age">
+                    <div class="input-group-append">
+                        <div class="input-group-text">в годах</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-6 col-xl-4">Вес</div>
+            <div class="col-md-2 col-xl-4"><input type="text" size="4" class="form-control" name="weight"></div>
+            <div class="col-md-2 form-check">
+                <input onclick="weight.value=weight.value*2.2046" class="form-check-input" type="radio" value="1" name="weightRB" id="funt">
+                <label class="form-check-label" for="funt">фунтов</label>
+            </div>
+            <div class="col-md-2 form-check">
+                <input onclick="weight.value=weight.value/2.2046" class="form-check-input" type="radio" checked="" value="0" name="weightRB" id="kg">
+                <label class="form-check-label" for="kg">килограмм</label>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-4">Складка на груди</div>
+            <div class="col-md-8">
+                <div class="input-group">
+                    <input type="text" size="4" class="form-control" name="pec">
+                    <div class="input-group-append">
+                        <div class="input-group-text">мм</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-4">Складка на животе</div>
+            <div class="col-md-8">
+                <div class="input-group">
+                    <input type="text" size="4" class="form-control" name="abd">
+                    <div class="input-group-append">
+                        <div class="input-group-text">мм</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-4">Складка на бёдрах</div>
+            <div class="col-md-8">
+                <div class="input-group">
+                    <input type="text" size="4" class="form-control" name="thigh">
+                    <div class="input-group-append">
+                        <div class="input-group-text">мм</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-4">Складка на трицепсе</div>
+            <div class="col-md-8">
+                <div class="input-group">
+                    <input type="text" size="4" class="form-control" name="triceps">
+                    <div class="input-group-append">
+                        <div class="input-group-text">мм</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-4">Складка под лопаткой</div>
+            <div class="col-md-8">
+                <div class="input-group">
+                    <input type="text" size="4" class="form-control" name="subscapular">
+                    <div class="input-group-append">
+                        <div class="input-group-text">мм</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-4">Складка над подвздошной костью</div>
+            <div class="col-md-8">
+                <div class="input-group">
+                    <input type="text" size="4" class="form-control" name="suprailiac">
+                    <div class="input-group-append">
+                        <div class="input-group-text">мм</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-4">Складка подмышкой</div>
+            <div class="col-md-8">
+                <div class="input-group">
+                    <input type="text" size="4" class="form-control" name="axilla">
+                    <div class="input-group-append">
+                        <div class="input-group-text">мм</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-12 text-center mt-3"><input onclick="gaBf1()" type="button" value="Вычислить" name="button" class="btn btn-info">
+                <input class="btn btn-secondary" type="reset" value="Сбросить"></div>
+        </div>
+        <div class="form-group row wpcalcresult">
+            <div class="col-md-12"><span id="res1"></span><span id="res2"></span></div>
+        </div>
+    </form>
+</div>
+<script src="/js/calc_1.js"></script>

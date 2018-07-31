@@ -1,0 +1,44 @@
+<div class="border rounded shadow px-5 py-4 mb-5">
+    <h3 class="text-center mb-4">Идеальный вес</h3>
+    <form name="first">
+        <div class="form-group row">
+            <div class="col-md-4">Возраст</div>
+            <div class="col-md-8">
+                <div class="input-group">
+                    <input id="bhname" class="form-control" type="text">
+                    <div class="input-group-append">
+                        <div class="input-group-text">лет</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-4">Пол</div>
+            <div class="col-sm-8"><select id="gender" class="form-control">
+                <option value="male">Мужчина</option>
+                <option value="female">Женщина</option>
+            </select></div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-4">Рост</div>
+            <div class="col-sm-4"><input type="text" class="form-control" id="heightcm" onkeyup="lengConv(this)"></div>
+            <div class="col-sm-4"><select id="height" class="form-control" onchange="heightUnitChange()">
+                <option value="cm">Сантиметров</option>
+                <option value="ft">Футов</option>
+            </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4"><input type="text" id="heightft" class="form-control" onkeyup="lengConv(this)" value="0" readonly></div>
+            <div class="col-sm-4"><input type="text" id="heightinch" class="form-control" onkeyup="lengConv(this)" value="0" readonly></div>
+        </div>
+        <div class="form-group row">
+            <div class="col-12 text-center"><input class="btn btn-info" type="button" value="Рассчитать" onclick="calculate()"> <input type="reset" value="Сбросить" class="btn btn-secondary"></div>
+        </div>
+        <div class="form-group row">
+            <div class="col-12"><span id="dispres"></span></div>
+        </div>
+    </form>
+</div>
+<script src="/js/calc_3.js"></script>

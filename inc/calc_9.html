@@ -1,0 +1,445 @@
+<div class="border rounded shadow px-5 py-4 mb-5">
+    <h3 class="text-center mb-4">Совместимость продуктов</h3>
+
+    <div class="form-group row">
+        <div class="col-sm-5">
+            <select id="product1" class="form-control" onchange="calc_9();">
+                <option value="1">Мясо, рыба, птица</option>
+                <option value="2">Зернобобовые</option>
+                <option value="3">Масло сливочное, сливки</option>
+                <option value="4">Сметана</option>
+                <option value="5">Масло растительное</option>
+                <option value="6">Сахар, конд. изделия</option>
+                <option value="7">Хлеб, крупы, картофель</option>
+                <option value="8">Фрукты кислые, помидоры</option>
+                <option value="9">Фрукты полукислые</option>
+                <option value="10">Фрукты сладкие, сухофр.</option>
+                <option value="11">Овощи зеленые и некрахм.</option>
+                <option value="12">Овощи крахмалистые</option>
+                <option value="13">Молоко</option>
+                <option value="14">Творог, кисло-мол. прод-ты</option>
+                <option value="15">Сыр, брынза</option>
+                <option value="16">Яйца</option>
+                <option value="17">Орехи</option>
+            </select>
+
+        </div>
+        <div class="col-sm-2 text-center wpcc wpcb">+</div>
+        <div class="col-sm-5">
+            <select id="product2" class="form-control" onchange="calc_9();">
+                <option value="1">Мясо, рыба, птица</option>
+                <option value="2">Зернобобовые</option>
+                <option value="3">Масло сливочное, сливки</option>
+                <option value="4">Сметана</option>
+                <option value="5">Масло растительное</option>
+                <option value="6">Сахар, конд. изделия</option>
+                <option value="7">Хлеб, крупы, картофель</option>
+                <option value="8">Фрукты кислые, помидоры</option>
+                <option value="9">Фрукты полукислые</option>
+                <option value="10">Фрукты сладкие, сухофр.</option>
+                <option value="11">Овощи зеленые и некрахм.</option>
+                <option value="12">Овощи крахмалистые</option>
+                <option value="13">Молоко</option>
+                <option value="14">Творог, кисло-мол. прод-ты</option>
+                <option value="15">Сыр, брынза</option>
+                <option value="16">Яйца</option>
+                <option value="17">Орехи</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-sm-5">Совместимость продуктов:</div>
+        <div class="col-sm-2"></div>
+        <div class="col-sm-5" id="wpresult">одинаковые</div>
+
+    </div>
+
+    <div class="form-group row">
+        <div class="col-12">
+            <table border="3" style="font-size: 80%;width:100%;" id="producttable">
+                <tbody>
+                <tr bgcolor="#FFFFFF">
+                    <td>&nbsp;</td>
+                    <td>Название продукта</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td >4</td>
+                    <td >5</td>
+                    <td >6</td>
+                    <td >7</td>
+                    <td >8</td>
+                    <td >9</td>
+                    <td >10</td>
+                    <td >11</td>
+                    <td >12</td>
+                    <td >13</td>
+                    <td >14</td>
+                    <td >15</td>
+                    <td >16</td>
+                    <td >17</td>
+                </tr>
+                <tr bgcolor="#FFFFFF">
+                    <td>1</td>
+                    <td>Мясо, рыба, птица</td>
+                    <td bgcolor="white" title="Мясо, рыба, птица">&nbsp;</td>
+                    <td bgcolor="red" title="Зернобобовые">&nbsp;</td>
+                    <td bgcolor="red" title="Масло сливочное, сливки">&nbsp;</td>
+                    <td bgcolor="red" title="Сметана">&nbsp;</td>
+                    <td bgcolor="red" title="Масло растительное">&nbsp;</td>
+                    <td bgcolor="red" title="Сахар, кондитерские изделия">&nbsp;</td>
+                    <td bgcolor="red" title="Хлеб, крупы, картофель">&nbsp;</td>
+                    <td bgcolor="red" title="Фрукты кислые, помидоры">&nbsp;</td>
+                    <td bgcolor="red" title="Фрукты полукислые">&nbsp;</td>
+                    <td bgcolor="red" title="Фрукты сладкие, сухофрукты">&nbsp;</td>
+                    <td bgcolor="green" title="Овощи зеленые и некрахмалистые">&nbsp;</td>
+                    <td bgcolor="yellow" title="Овощи крахмалистые">&nbsp;</td>
+                    <td bgcolor="red" title="Молоко">&nbsp;</td>
+                    <td bgcolor="red" title="Творог, кисло-молочные продукты">&nbsp;</td>
+                    <td bgcolor="red" title="Сыр, брынза">&nbsp;</td>
+                    <td bgcolor="red" title="Яйца">&nbsp;</td>
+                    <td bgcolor="red" title="Орехи">&nbsp;</td>
+                </tr>
+                <tr bgcolor="#FFFFFF">
+                    <td>2</td>
+                    <td>Зернобобовые</td>
+                    <td bgcolor="red" title="Мясо, рыба, птица">&nbsp;</td>
+                    <td bgcolor="white" title="Зернобобовые">&nbsp;</td>
+                    <td bgcolor="yellow" title="Масло сливочное, сливки">&nbsp;</td>
+                    <td bgcolor="green" title="Сметана">&nbsp;</td>
+                    <td bgcolor="green" title="Масло растительное">&nbsp;</td>
+                    <td bgcolor="red" title="Сахар, кондитерские изделия">&nbsp;</td>
+                    <td bgcolor="yellow" title="Хлеб, крупы, картофель">&nbsp;</td>
+                    <td bgcolor="red" title="Фрукты кислые, помидоры">&nbsp;</td>
+                    <td bgcolor="red" title="Фрукты полукислые">&nbsp;</td>
+                    <td bgcolor="red" title="Фрукты сладкие, сухофрукты">&nbsp;</td>
+                    <td bgcolor="green" title="Овощи зеленые и некрахмалистые">&nbsp;</td>
+                    <td bgcolor="green" title="Овощи крахмалистые">&nbsp;</td>
+                    <td bgcolor="red" title="Молоко">&nbsp;</td>
+                    <td bgcolor="red" title="Творог, кисло-молочные продукты">&nbsp;</td>
+                    <td bgcolor="red" title="Сыр, брынза">&nbsp;</td>
+                    <td bgcolor="red" title="Яйца">&nbsp;</td>
+                    <td bgcolor="yellow" title="Орехи">&nbsp;</td>
+                </tr>
+                <tr bgcolor="#FFFFFF">
+                    <td>3</td>
+                    <td>Масло сливочное, сливки</td>
+                    <td bgcolor="red" title="Мясо, рыба, птица">&nbsp;</td>
+                    <td bgcolor="yellow" title="Зернобобовые">&nbsp;</td>
+                    <td bgcolor="white" title="Масло сливочное, сливки">&nbsp;</td>
+                    <td bgcolor="yellow" title="Сметана">&nbsp;</td>
+                    <td bgcolor="red" title="Масло растительное">&nbsp;</td>
+                    <td bgcolor="red" title="Сахар, кондитерские изделия">&nbsp;</td>
+                    <td bgcolor="green" title="Хлеб, крупы, картофель">&nbsp;</td>
+                    <td bgcolor="green" title="Фрукты кислые, помидоры">&nbsp;</td>
+                    <td bgcolor="yellow" title="Фрукты полукислые">&nbsp;</td>
+                    <td bgcolor="red" title="Фрукты сладкие, сухофрукты">&nbsp;</td>
+                    <td bgcolor="green" title="Овощи зеленые и некрахмалистые">&nbsp;</td>
+                    <td bgcolor="green" title="Овощи крахмалистые">&nbsp;</td>
+                    <td bgcolor="yellow" title="Молоко">&nbsp;</td>
+                    <td bgcolor="red" title="Творог, кисло-молочные продукты">&nbsp;</td>
+                    <td bgcolor="yellow" title="Сыр, брынза">&nbsp;</td>
+                    <td bgcolor="red" title="Яйца">&nbsp;</td>
+                    <td bgcolor="red" title="Орехи">&nbsp;</td>
+                </tr>
+                <tr bgcolor="#FFFFFF">
+                    <td>4</td>
+                    <td>Сметана</td>
+                    <td bgcolor="red" title="Мясо, рыба, птица">&nbsp;</td>
+                    <td bgcolor="green" title="Зернобобовые">&nbsp;</td>
+                    <td bgcolor="yellow" title="Масло сливочное, сливки">&nbsp;</td>
+                    <td bgcolor="white" title="Сметана">&nbsp;</td>
+                    <td bgcolor="yellow" title="Масло растительное">&nbsp;</td>
+                    <td bgcolor="red" title="Сахар, кондитерские изделия">&nbsp;</td>
+                    <td bgcolor="green" title="Хлеб, крупы, картофель">&nbsp;</td>
+                    <td bgcolor="green" title="Фрукты кислые, помидоры">&nbsp;</td>
+                    <td bgcolor="green" title="Фрукты полукислые">&nbsp;</td>
+                    <td bgcolor="yellow" title="Фрукты сладкие, сухофрукты">&nbsp;</td>
+                    <td bgcolor="green" title="Овощи зеленые и некрахмалистые">&nbsp;</td>
+                    <td bgcolor="green" title="Овощи крахмалистые">&nbsp;</td>
+                    <td bgcolor="red" title="Молоко">&nbsp;</td>
+                    <td bgcolor="green" title="Творог, кисло-молочные продукты">&nbsp;</td>
+                    <td bgcolor="yellow" title="Сыр, брынза">&nbsp;</td>
+                    <td bgcolor="yellow" title="Яйца">&nbsp;</td>
+                    <td bgcolor="red" title="Орехи">&nbsp;</td>
+                </tr>
+                <tr bgcolor="#FFFFFF">
+                    <td>5</td>
+                    <td>Масло растительное</td>
+                    <td bgcolor="red" title="Мясо, рыба, птица">&nbsp;</td>
+                    <td bgcolor="green" title="Зернобобовые">&nbsp;</td>
+                    <td bgcolor="red" title="Масло сливочное, сливки">&nbsp;</td>
+                    <td bgcolor="yellow" title="Сметана">&nbsp;</td>
+                    <td bgcolor="white" title="Масло растительное">&nbsp;</td>
+                    <td bgcolor="red" title="Сахар, кондитерские изделия">&nbsp;</td>
+                    <td bgcolor="green" title="Хлеб, крупы, картофель">&nbsp;</td>
+                    <td bgcolor="green" title="Фрукты кислые, помидоры">&nbsp;</td>
+                    <td bgcolor="yellow" title="Фрукты полукислые">&nbsp;</td>
+                    <td bgcolor="yellow" title="Фрукты сладкие, сухофрукты">&nbsp;</td>
+                    <td bgcolor="green" title="Овощи зеленые и некрахмалистые">&nbsp;</td>
+                    <td bgcolor="green" title="Овощи крахмалистые">&nbsp;</td>
+                    <td bgcolor="red" title="Молоко">&nbsp;</td>
+                    <td bgcolor="red" title="Творог, кисло-молочные продукты">&nbsp;</td>
+                    <td bgcolor="red" title="Сыр, брынза">&nbsp;</td>
+                    <td bgcolor="red" title="Яйца">&nbsp;</td>
+                    <td bgcolor="green" title="Орехи">&nbsp;</td>
+                </tr>
+                <tr bgcolor="#FFFFFF">
+                    <td>6</td>
+                    <td>Сахар, кондитерские изделия</td>
+                    <td bgcolor="red" title="Мясо, рыба, птица">&nbsp;</td>
+                    <td bgcolor="red" title="Зернобобовые">&nbsp;</td>
+                    <td bgcolor="red" title="Масло сливочное, сливки">&nbsp;</td>
+                    <td bgcolor="red" title="Сметана">&nbsp;</td>
+                    <td bgcolor="red" title="Масло растительное">&nbsp;</td>
+                    <td bgcolor="white" title="Сахар, кондитерские изделия">&nbsp;</td>
+                    <td bgcolor="red" title="Хлеб, крупы, картофель">&nbsp;</td>
+                    <td bgcolor="red" title="Фрукты кислые, помидоры">&nbsp;</td>
+                    <td bgcolor="red" title="Фрукты полукислые">&nbsp;</td>
+                    <td bgcolor="red" title="Фрукты сладкие, сухофрукты">&nbsp;</td>
+                    <td bgcolor="green" title="Овощи зеленые и некрахмалистые">&nbsp;</td>
+                    <td bgcolor="red" title="Овощи крахмалистые">&nbsp;</td>
+                    <td bgcolor="red" title="Молоко">&nbsp;</td>
+                    <td bgcolor="red" title="Творог, кисло-молочные продукты">&nbsp;</td>
+                    <td bgcolor="red" title="Сыр, брынза">&nbsp;</td>
+                    <td bgcolor="red" title="Яйца">&nbsp;</td>
+                    <td bgcolor="red" title="Орехи">&nbsp;</td>
+                </tr>
+                <tr bgcolor="#FFFFFF">
+                    <td>7</td>
+                    <td>Хлеб, крупы, картофель</td>
+                    <td bgcolor="red" title="Мясо, рыба, птица">&nbsp;</td>
+                    <td bgcolor="yellow" title="Зернобобовые">&nbsp;</td>
+                    <td bgcolor="green" title="Масло сливочное, сливки">&nbsp;</td>
+                    <td bgcolor="green" title="Сметана">&nbsp;</td>
+                    <td bgcolor="green" title="Масло растительное">&nbsp;</td>
+                    <td bgcolor="red" title="Сахар, кондитерские изделия">&nbsp;</td>
+                    <td bgcolor="white" title="Хлеб, крупы, картофель">&nbsp;</td>
+                    <td bgcolor="red" title="Фрукты кислые, помидоры">&nbsp;</td>
+                    <td bgcolor="red" title="Фрукты полукислые">&nbsp;</td>
+                    <td bgcolor="red" title="Фрукты сладкие, сухофрукты">&nbsp;</td>
+                    <td bgcolor="green" title="Овощи зеленые и некрахмалистые">&nbsp;</td>
+                    <td bgcolor="green" title="Овощи крахмалистые">&nbsp;</td>
+                    <td bgcolor="red" title="Молоко">&nbsp;</td>
+                    <td bgcolor="red" title="Творог, кисло-молочные продукты">&nbsp;</td>
+                    <td bgcolor="yellow" title="Сыр, брынза">&nbsp;</td>
+                    <td bgcolor="red" title="Яйца">&nbsp;</td>
+                    <td bgcolor="yellow" title="Орехи">&nbsp;</td>
+                </tr>
+                <tr bgcolor="#FFFFFF">
+                    <td>8</td>
+                    <td>Фрукты кислые, помидоры</td>
+                    <td bgcolor="red" title="Мясо, рыба, птица">&nbsp;</td>
+                    <td bgcolor="red" title="Зернобобовые">&nbsp;</td>
+                    <td bgcolor="green" title="Масло сливочное, сливки">&nbsp;</td>
+                    <td bgcolor="green" title="Сметана">&nbsp;</td>
+                    <td bgcolor="green" title="Масло растительное">&nbsp;</td>
+                    <td bgcolor="red" title="Сахар, кондитерские изделия">&nbsp;</td>
+                    <td bgcolor="red" title="Хлеб, крупы, картофель">&nbsp;</td>
+                    <td bgcolor="white" title="Фрукты кислые, помидоры">&nbsp;</td>
+                    <td bgcolor="green" title="Фрукты полукислые">&nbsp;</td>
+                    <td bgcolor="yellow" title="Фрукты сладкие, сухофрукты">&nbsp;</td>
+                    <td bgcolor="green" title="Овощи зеленые и некрахмалистые">&nbsp;</td>
+                    <td bgcolor="yellow" title="Овощи крахмалистые">&nbsp;</td>
+                    <td bgcolor="red" title="Молоко">&nbsp;</td>
+                    <td bgcolor="yellow" title="Творог, кисло-молочные продукты">&nbsp;</td>
+                    <td bgcolor="green" title="Сыр, брынза">&nbsp;</td>
+                    <td bgcolor="red" title="Яйца">&nbsp;</td>
+                    <td bgcolor="green" title="Орехи">&nbsp;</td>
+                </tr>
+                <tr bgcolor="#FFFFFF">
+                    <td>9</td>
+                    <td>Фрукты полукислые</td>
+                    <td bgcolor="red" title="Мясо, рыба, птица">&nbsp;</td>
+                    <td bgcolor="red" title="Зернобобовые">&nbsp;</td>
+                    <td bgcolor="yellow" title="Масло сливочное, сливки">&nbsp;</td>
+                    <td bgcolor="green" title="Сметана">&nbsp;</td>
+                    <td bgcolor="yellow" title="Масло растительное">&nbsp;</td>
+                    <td bgcolor="red" title="Сахар, кондитерские изделия">&nbsp;</td>
+                    <td bgcolor="red" title="Хлеб, крупы, картофель">&nbsp;</td>
+                    <td bgcolor="green" title="Фрукты кислые, помидоры">&nbsp;</td>
+                    <td bgcolor="white" title="Фрукты полукислые">&nbsp;</td>
+                    <td bgcolor="green" title="Фрукты сладкие, сухофрукты">&nbsp;</td>
+                    <td bgcolor="green" title="Овощи зеленые и некрахмалистые">&nbsp;</td>
+                    <td bgcolor="yellow" title="Овощи крахмалистые">&nbsp;</td>
+                    <td bgcolor="yellow" title="Молоко">&nbsp;</td>
+                    <td bgcolor="green" title="Творог, кисло-молочные продукты">&nbsp;</td>
+                    <td bgcolor="yellow" title="Сыр, брынза">&nbsp;</td>
+                    <td bgcolor="red" title="Яйца">&nbsp;</td>
+                    <td bgcolor="green" title="Орехи">&nbsp;</td>
+                </tr>
+                <tr bgcolor="#FFFFFF">
+                    <td>10</td>
+                    <td>Фрукты сладкие, сухофрукты</td>
+                    <td bgcolor="red" title="Мясо, рыба, птица">&nbsp;</td>
+                    <td bgcolor="red" title="Зернобобовые">&nbsp;</td>
+                    <td bgcolor="red" title="Масло сливочное, сливки">&nbsp;</td>
+                    <td bgcolor="yellow" title="Сметана">&nbsp;</td>
+                    <td bgcolor="yellow" title="Масло растительное">&nbsp;</td>
+                    <td bgcolor="red" title="Сахар, кондитерские изделия">&nbsp;</td>
+                    <td bgcolor="red" title="Хлеб, крупы, картофель">&nbsp;</td>
+                    <td bgcolor="yellow" title="Фрукты кислые, помидоры">&nbsp;</td>
+                    <td bgcolor="green" title="Фрукты полукислые">&nbsp;</td>
+                    <td bgcolor="white" title="Фрукты сладкие, сухофрукты">&nbsp;</td>
+                    <td bgcolor="green" title="Овощи зеленые и некрахмалистые">&nbsp;</td>
+                    <td bgcolor="yellow" title="Овощи крахмалистые">&nbsp;</td>
+                    <td bgcolor="yellow" title="Молоко">&nbsp;</td>
+                    <td bgcolor="green" title="Творог, кисло-молочные продукты">&nbsp;</td>
+                    <td bgcolor="red" title="Сыр, брынза">&nbsp;</td>
+                    <td bgcolor="red" title="Яйца">&nbsp;</td>
+                    <td bgcolor="yellow" title="Орехи">&nbsp;</td>
+                </tr>
+                <tr bgcolor="#FFFFFF">
+                    <td>11</td>
+                    <td>Овощи зеленые и&nbsp;некрахмалистые</td>
+                    <td bgcolor="green" title="Мясо, рыба, птица">&nbsp;</td>
+                    <td bgcolor="green" title="Зернобобовые">&nbsp;</td>
+                    <td bgcolor="green" title="Масло сливочное, сливки">&nbsp;</td>
+                    <td bgcolor="green" title="Сметана">&nbsp;</td>
+                    <td bgcolor="green" title="Масло растительное">&nbsp;</td>
+                    <td bgcolor="green" title="Сахар, кондитерские изделия">&nbsp;</td>
+                    <td bgcolor="green" title="Хлеб, крупы, картофель">&nbsp;</td>
+                    <td bgcolor="green" title="Фрукты кислые, помидоры">&nbsp;</td>
+                    <td bgcolor="green" title="Фрукты полукислые">&nbsp;</td>
+                    <td bgcolor="green" title="Фрукты сладкие, сухофрукты">&nbsp;</td>
+                    <td bgcolor="white" title="Овощи зеленые и некрахмалистые">&nbsp;</td>
+                    <td bgcolor="green" title="Овощи крахмалистые">&nbsp;</td>
+                    <td bgcolor="red" title="Молоко">&nbsp;</td>
+                    <td bgcolor="green" title="Творог, кисло-молочные продукты">&nbsp;</td>
+                    <td bgcolor="green" title="Сыр, брынза">&nbsp;</td>
+                    <td bgcolor="green" title="Яйца">&nbsp;</td>
+                    <td bgcolor="green" title="Орехи">&nbsp;</td>
+                </tr>
+                <tr bgcolor="#FFFFFF">
+                    <td>12</td>
+                    <td>Овощи крахмалистые</td>
+                    <td bgcolor="yellow" title="Мясо, рыба, птица">&nbsp;</td>
+                    <td bgcolor="green" title="Зернобобовые">&nbsp;</td>
+                    <td bgcolor="green" title="Масло сливочное, сливки">&nbsp;</td>
+                    <td bgcolor="green" title="Сметана">&nbsp;</td>
+                    <td bgcolor="green" title="Масло растительное">&nbsp;</td>
+                    <td bgcolor="red" title="Сахар, кондитерские изделия">&nbsp;</td>
+                    <td bgcolor="green" title="Хлеб, крупы, картофель">&nbsp;</td>
+                    <td bgcolor="yellow" title="Фрукты кислые, помидоры">&nbsp;</td>
+                    <td bgcolor="yellow" title="Фрукты полукислые">&nbsp;</td>
+                    <td bgcolor="yellow" title="Фрукты сладкие, сухофрукты">&nbsp;</td>
+                    <td bgcolor="green" title="Овощи зеленые и некрахмалистые">&nbsp;</td>
+                    <td bgcolor="white" title="Овощи крахмалистые">&nbsp;</td>
+                    <td bgcolor="yellow" title="Молоко">&nbsp;</td>
+                    <td bgcolor="green" title="Творог, кисло-молочные продукты">&nbsp;</td>
+                    <td bgcolor="green" title="Сыр, брынза">&nbsp;</td>
+                    <td bgcolor="yellow" title="Яйца">&nbsp;</td>
+                    <td bgcolor="green" title="Орехи">&nbsp;</td>
+                </tr>
+                <tr bgcolor="#FFFFFF">
+                    <td>13</td>
+                    <td>Молоко</td>
+                    <td bgcolor="red" title="Мясо, рыба, птица">&nbsp;</td>
+                    <td bgcolor="red" title="Зернобобовые">&nbsp;</td>
+                    <td bgcolor="yellow" title="Масло сливочное, сливки">&nbsp;</td>
+                    <td bgcolor="red" title="Сметана">&nbsp;</td>
+                    <td bgcolor="red" title="Масло растительное">&nbsp;</td>
+                    <td bgcolor="red" title="Сахар, кондитерские изделия">&nbsp;</td>
+                    <td bgcolor="red" title="Хлеб, крупы, картофель">&nbsp;</td>
+                    <td bgcolor="red" title="Фрукты кислые, помидоры">&nbsp;</td>
+                    <td bgcolor="yellow" title="Фрукты полукислые">&nbsp;</td>
+                    <td bgcolor="yellow" title="Фрукты сладкие, сухофрукты">&nbsp;</td>
+                    <td bgcolor="red" title="Овощи зеленые и некрахмалистые">&nbsp;</td>
+                    <td bgcolor="yellow" title="Овощи крахмалистые">&nbsp;</td>
+                    <td bgcolor="white" title="Молоко">&nbsp;</td>
+                    <td bgcolor="red" title="Творог, кисло-молочные продукты">&nbsp;</td>
+                    <td bgcolor="red" title="Сыр, брынза">&nbsp;</td>
+                    <td bgcolor="red" title="Яйца">&nbsp;</td>
+                    <td bgcolor="red" title="Орехи">&nbsp;</td>
+                </tr>
+                <tr bgcolor="#FFFFFF">
+                    <td>14</td>
+                    <td>Творог, <span class="nobr">кисло-молочные</span> продукты</td>
+                    <td bgcolor="red" title="Мясо, рыба, птица">&nbsp;</td>
+                    <td bgcolor="red" title="Зернобобовые">&nbsp;</td>
+                    <td bgcolor="red" title="Масло сливочное, сливки">&nbsp;</td>
+                    <td bgcolor="green" title="Сметана">&nbsp;</td>
+                    <td bgcolor="red" title="Масло растительное">&nbsp;</td>
+                    <td bgcolor="red" title="Сахар, кондитерские изделия">&nbsp;</td>
+                    <td bgcolor="red" title="Хлеб, крупы, картофель">&nbsp;</td>
+                    <td bgcolor="yellow" title="Фрукты кислые, помидоры">&nbsp;</td>
+                    <td bgcolor="green" title="Фрукты полукислые">&nbsp;</td>
+                    <td bgcolor="green" title="Фрукты сладкие, сухофрукты">&nbsp;</td>
+                    <td bgcolor="green" title="Овощи зеленые и некрахмалистые">&nbsp;</td>
+                    <td bgcolor="green" title="Овощи крахмалистые">&nbsp;</td>
+                    <td bgcolor="red" title="Молоко">&nbsp;</td>
+                    <td bgcolor="white" title="Творог, кисло-молочные продукты">&nbsp;</td>
+                    <td bgcolor="green" title="Сыр, брынза">&nbsp;</td>
+                    <td bgcolor="red" title="Яйца">&nbsp;</td>
+                    <td bgcolor="green" title="Орехи">&nbsp;</td>
+                </tr>
+                <tr bgcolor="#FFFFFF">
+                    <td>15</td>
+                    <td>Сыр, брынза</td>
+                    <td bgcolor="red" title="Мясо, рыба, птица">&nbsp;</td>
+                    <td bgcolor="red" title="Зернобобовые">&nbsp;</td>
+                    <td bgcolor="yellow" title="Масло сливочное, сливки">&nbsp;</td>
+                    <td bgcolor="yellow" title="Сметана">&nbsp;</td>
+                    <td bgcolor="red" title="Масло растительное">&nbsp;</td>
+                    <td bgcolor="red" title="Сахар, кондитерские изделия">&nbsp;</td>
+                    <td bgcolor="yellow" title="Хлеб, крупы, картофель">&nbsp;</td>
+                    <td bgcolor="green" title="Фрукты кислые, помидоры">&nbsp;</td>
+                    <td bgcolor="yellow" title="Фрукты полукислые">&nbsp;</td>
+                    <td bgcolor="red" title="Фрукты сладкие, сухофрукты">&nbsp;</td>
+                    <td bgcolor="green" title="Овощи зеленые и некрахмалистые">&nbsp;</td>
+                    <td bgcolor="green" title="Овощи крахмалистые">&nbsp;</td>
+                    <td bgcolor="red" title="Молоко">&nbsp;</td>
+                    <td bgcolor="green" title="Творог, кисло-молочные продукты">&nbsp;</td>
+                    <td bgcolor="white" title="Сыр, брынза">&nbsp;</td>
+                    <td bgcolor="red" title="Яйца">&nbsp;</td>
+                    <td bgcolor="yellow" title="Орехи">&nbsp;</td>
+                </tr>
+                <tr bgcolor="#FFFFFF">
+                    <td>16</td>
+                    <td>Яйца</td>
+                    <td bgcolor="red" title="Мясо, рыба, птица">&nbsp;</td>
+                    <td bgcolor="red" title="Зернобобовые">&nbsp;</td>
+                    <td bgcolor="red" title="Масло сливочное, сливки">&nbsp;</td>
+                    <td bgcolor="yellow" title="Сметана">&nbsp;</td>
+                    <td bgcolor="red" title="Масло растительное">&nbsp;</td>
+                    <td bgcolor="red" title="Сахар, кондитерские изделия">&nbsp;</td>
+                    <td bgcolor="red" title="Хлеб, крупы, картофель">&nbsp;</td>
+                    <td bgcolor="red" title="Фрукты кислые, помидоры">&nbsp;</td>
+                    <td bgcolor="red" title="Фрукты полукислые">&nbsp;</td>
+                    <td bgcolor="red" title="Фрукты сладкие, сухофрукты">&nbsp;</td>
+                    <td bgcolor="green" title="Овощи зеленые и некрахмалистые">&nbsp;</td>
+                    <td bgcolor="yellow" title="Овощи крахмалистые">&nbsp;</td>
+                    <td bgcolor="red" title="Молоко">&nbsp;</td>
+                    <td bgcolor="red" title="Творог, кисло-молочные продукты">&nbsp;</td>
+                    <td bgcolor="red" title="Сыр, брынза">&nbsp;</td>
+                    <td bgcolor="white" title="Яйца">&nbsp;</td>
+                    <td bgcolor="red" title="Орехи">&nbsp;</td>
+                </tr>
+                <tr bgcolor="#FFFFFF">
+                    <td>17</td>
+                    <td>Орехи</td>
+                    <td bgcolor="red" title="Мясо, рыба, птица">&nbsp;</td>
+                    <td bgcolor="yellow" title="Зернобобовые">&nbsp;</td>
+                    <td bgcolor="red" title="Масло сливочное, сливки">&nbsp;</td>
+                    <td bgcolor="red" title="Сметана">&nbsp;</td>
+                    <td bgcolor="green" title="Масло растительное">&nbsp;</td>
+                    <td bgcolor="red" title="Сахар, кондитерские изделия">&nbsp;</td>
+                    <td bgcolor="yellow" title="Хлеб, крупы, картофель">&nbsp;</td>
+                    <td bgcolor="green" title="Фрукты кислые, помидоры">&nbsp;</td>
+                    <td bgcolor="green" title="Фрукты полукислые">&nbsp;</td>
+                    <td bgcolor="yellow" title="Фрукты сладкие, сухофрукты">&nbsp;</td>
+                    <td bgcolor="green" title="Овощи зеленые и некрахмалистые">&nbsp;</td>
+                    <td bgcolor="green" title="Овощи крахмалистые">&nbsp;</td>
+                    <td bgcolor="red" title="Молоко">&nbsp;</td>
+                    <td bgcolor="green" title="Творог, кисло-молочные продукты">&nbsp;</td>
+                    <td bgcolor="yellow" title="Сыр, брынза">&nbsp;</td>
+                    <td bgcolor="red" title="Яйца">&nbsp;</td>
+                    <td bgcolor="white" title="Орехи">&nbsp;</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script src="/js/calc_9.js"></script>

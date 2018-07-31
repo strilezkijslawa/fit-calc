@@ -1,0 +1,52 @@
+<div class="border rounded shadow px-5 py-4 mb-5">
+    <h3 class="text-center mb-4">Расчет максимального веса</h3>
+    <div id="calc34_form_ca">
+        <p>Предсказывают вес, который Вы теоретически можете поднять в одном повторении, если известно, какой вес Вы поднимаете в определённом количестве повторений.</p>
+        <div class="form-group row">
+            <div class="col-sm-4">Вес</div>
+            <div class="col-sm-8">
+                <div class="input-group">
+                    <input type="text" id="calc34_param1" class="form-control" name="calc34_param1">
+                    <div class="input-group-append">
+                        <div class="input-group-text">кг</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-4">Повторения</div>
+            <div class="col-sm-8">
+                <div class="input-group">
+                    <input type="text" id="calc34_param2" name="calc34_param2" class="form-control">
+                    <div class="input-group-append">
+                        <div class="input-group-text">кг</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-12 text-center mt-3">
+                <input type="button" onclick="calc34();" class="btn btn-info" value="Вычислить">
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-4">Формула Бржыки</div>
+            <div class="col-sm-8">
+                <input type="text" id="calc34_res1" name="calc34_res1" readonly class="form-control">
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-4">Формула Эйпли</div>
+            <div class="col-sm-8">
+                <input type="text" id="calc34_res2" name="calc34_res2" readonly class="form-control">
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-4">Формула Лэндера</div>
+            <div class="col-sm-8">
+                <input type="text" id="calc34_res3" name="calc34_res3" readonly class="form-control">
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/js/calc_34.js"></script>

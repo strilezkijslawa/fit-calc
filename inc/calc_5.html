@@ -1,0 +1,74 @@
+<div class="border rounded shadow px-5 py-4 mb-5">
+    <h3 class="text-center mb-4">Норма пульса во время тренировок</h3>
+    <form method="POST" name="form">
+
+        <div class="form-group row">
+            <div class="col-sm-4">Ваш стандартный пульс</div>
+            <div class="col-sm-8">
+                <div class="input-group">
+                    <input type="text" name="pulse" id="oleyPCpulse" class="form-control" maxlength="8">
+                    <div class="input-group-append">
+                        <div class="input-group-text">ударов в минуту</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-4">Ваш возраст</div>
+            <div class="col-md-8">
+                <div class="input-group">
+                    <input type="text" name="age" id="oleyPCage" class="form-control">
+                    <div class="input-group-append">
+                        <div class="input-group-text">лет</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-12 text-center mt-3">
+                <input type="button" value="Вычислить" class="btn btn-info" onclick="
+                    if( document.getElementById( 'oleyPCpulse' ).value == '' || document.getElementById( 'oleyPCpulse' ).value <= 0 ) {
+                        document.getElementById( 'oleyPCpulse' ).value = 65;
+                    }
+                    if( document.getElementById( 'oleyPCage' ).value == '' || document.getElementById( 'oleyPCage' ).value <= 0 ) {
+                        alert( 'Укажите свой возраст' );
+                        return false;
+                    }
+                    oleyPCvalues(document.getElementById( 'oleyPCpulse' ).value, document.getElementById( 'oleyPCage' ).value );
+                ">
+            </div>
+        </div>
+
+        <div style="overflow-x: auto;">
+            <table id="oleyPCchart" style="font-size: 0.9em;" class="table">
+
+                <tbody><tr>
+                    <td>зоны пульса<br>(% от максимального)</td>
+                    <td>по формуле '220 - возраст'<br>(ударов/минуту)</td>
+                    <td>по уточненной формуле<br>(ударов/минуту)</td></tr>
+
+                <tr id="oleyPCmax"><td class="oleyPCttl" style="text-align: right; padding-right: 5px;">максимальный пульс<br>100%</td> <th style="padding: 10px 0 0 40px;  color: #8F9A38;" id="oleyPCmax220"></th><th style="padding: 10px 0 0 40px; color: #8F9A38;" id="oleyPCmaxAcc"></th></tr>
+
+                <tr id="oleyPCvo2"><td class="oleyPCttl" style="text-align: right; padding-right: 5px;">зона VO2 max<br>90-100%<br><b>(макcимальная нагрузка)</b></td>
+                    <th style="padding: 10px 0 0 40px;  color: #8F9A38;" id="oleyPC90100a"></th><th style="padding: 10px 0 0 40px;  color: #8F9A38;" id="oleyPC90100b"></th></tr>
+
+                <tr id="oleyPCana"><td class="oleyPCttl" style="text-align: right; padding-right: 5px;">анаэробная зона<br>80-90%<br><b>(силовая тренировка)</b></td>
+                    <th style="padding: 10px 0 0 40px;  color: #8F9A38;" id="oleyPC8090a"></th><th style="padding: 10px 0 0 40px;  color: #8F9A38;" id="oleyPC8090b"></th></tr>
+
+                <tr id="oleyPCaer"><td class="oleyPCttl" style="text-align: right; padding-right: 5px;">аэробная зона<br>70-80%<br><b>(бег, велосипед)</b></td>
+                    <th style="padding: 10px 0 0 40px;  color: #8F9A38;" id="oleyPC7080a"></th><th style="padding: 10px 0 0 40px;  color: #8F9A38;" id="oleyPC7080b"></th></tr>
+
+                <tr id="oleyPCfat"><td class="oleyPCttl" style="text-align: right; padding-right: 5px;">начало жиросжигающей зоны<br>60-70%<br><b>(фитнес, ролики)</b></td>
+                    <th style="padding: 10px 0 0 40px;  color: #8F9A38;" id="oleyPC6070a"></th><th style="padding: 10px 0 0 40px;  color: #8F9A38;" id="oleyPC6070b"></th></tr>
+
+                <tr id="oleyPCwrm"><td class="oleyPCttl" style="text-align: right; padding-right: 5px;">зона легкой активности<br>50-60%<br><b>(разминка)</b></td>
+                    <th style="padding: 10px 0 0 40px;  color: #8F9A38;" id="oleyPC5060a"></th><th style="padding: 10px 0 0 40px;  color: #8F9A38;" id="oleyPC5060b"></th></tr>
+
+                <tr id="oleyPCmin"><td class="oleyPCttl" style="text-align: right; padding-right: 5px;">пульс покоя<br>0%</td>
+                    <th class="text-center" style="padding: 10px 0 0 40px; color: #8F9A38;" id="oleyPCminP" colspan="2"></th></tr>
+                </tbody>
+            </table>
+        </div>
+    </form>
+</div>
+<script src="/js/calc_5.js"></script>

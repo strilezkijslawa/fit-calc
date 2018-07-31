@@ -1,0 +1,48 @@
+<div class="border rounded shadow px-5 py-4 mb-5">
+    <h3 class="text-center mb-4">Количество повторений с определенным весом</h3>
+    <form method="post" class="form" name="calc33form">
+        <div class="form-group row">
+            <div class="col-sm-4">Макс. вес в одном повторении</div>
+            <div class="col-sm-8">
+                <div class="input-group">
+                    <input type="text" maxlength="10" class="form-control" name="calc33_max" value="110" onfocus="if (this.value=='110') this.value='';" onblur="if (this.value=='') this.value='110';">
+                    <div class="input-group-append">
+                        <div class="input-group-text">кг</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-4">Планируемый вес</div>
+            <div class="col-sm-8">
+                <div class="input-group">
+                    <input type="text" maxlength="10" class="form-control" name="calc33_weight" value="60" onfocus="if (this.value=='60') this.value='';" onblur="if (this.value=='') this.value='60';">
+                    <div class="input-group-append">
+                        <div class="input-group-text">кг</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-4">Поправочный коэффициент</div>
+            <div class="col-6 col-sm-4 col-md-2">
+                <input type="text" maxlength="10" class="form-control" name="calc33_popravka2" value="1" onfocus="if (this.value=='1') this.value='';" onblur="if (this.value=='') this.value='1';">
+            </div>
+            <div class="col-6 col-sm-4">
+                <input onclick="Popr33(this.form)" type="button" class="btn btn-info" value=">>" class="form-control" name="Popr2Button">
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-12 text-center mt-3">
+                <input onclick="Calc33(document.calc33form)" type="button" class="btn btn-info" value="Вычислить" name="Calc2Button">
+            </div>
+        </div>
+        <div class="form-group row wpcalcresult">
+            <div class="col-sm-4">Прогнозируемое количество повторений</div>
+            <div class="col-sm-4">
+                <input maxlength="10" type="text" class="form-control" readonly name="calc33_reps">
+            </div>
+        </div>
+    </form>
+</div>
+<script src="/js/calc_33.js"></script>

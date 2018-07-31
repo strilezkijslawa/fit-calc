@@ -1,0 +1,2830 @@
+<style>
+    [name="myform"] + #total div {
+        display:none;
+    }
+</style>
+<div class="border rounded shadow px-5 py-4 mb-5">
+    <h3 class="text-center mb-4">Суточная норма витаминов</h3>
+    <form onclick="showadd()" name="myform">
+
+        <div class="form-group row">
+            <div class="col-sm-4">Возраст:</div>
+            <div class="col-sm-8"><select id="age" name="age" class="form-control">
+                <option selected="selected" value="1">от 1 до 3 месяцев</option>
+                <option value="2">от 4 до 6 месяцев</option>
+                <option value="3">от 7 до 12 месяцев</option>
+                <option value="4">от 1 до 3 лет</option>
+                <option value="5">от 3 до 7 лет</option>
+                <option value="6">от 7 до 11 лет</option>
+                <option value="7">от 11 до 14 лет</option>
+                <option value="8">от 14 до 18 лет</option>
+                <option value="9">от 18 до 59 лет</option>
+                <option value="10">от 60 до 75 лет</option>
+                <option value="11">старше 75 лет</option>
+            </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-4">Пол:</div>
+            <div class="col-6 col-sm-4 form-check"><input type="radio" class="form-check-input" checked="checked" name="sex" value="m" id="m"><label class="form-check-label" for="m">Мужской</label> </div>
+            <div class="col-6 col-sm-4 form-check"><input type="radio" class="form-check-input" name="sex" value="f" id="f"><label class="form-check-label" for="f">Женский</label></div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-12 text-center">
+                <input onclick="show()" type="button" class="btn btn-info" value="Рассчитать"> <input type="reset" class="btn btn-secondary" value="Сбросить">
+            </div>
+        </div>
+        <div id="add" style="display: none;">Дополнительно:<input id="p" onclick="pl('p');" type="checkbox" name="pregnancy" value="pregnancy">Беременность<input id="l" onclick="pl('l');" type="checkbox" name="lactation" value="lactation">Период кормления грудью</div>
+    </form>
+    <div id="total">
+        <div id="1">
+            <table class="table mb-4">
+                <tbody>
+                <tr>
+                    <td>
+                        <b>Витамины</b>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Витамин A</td>
+                    <td>400</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B1</td>
+                    <td>0,3</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B2</td>
+                    <td>0,4</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B3</td>
+                    <td>5</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B5</td>
+                    <td>1</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B6</td>
+                    <td>0,4</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B9</td>
+                    <td>25-50</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B12</td>
+                    <td>0,3-0,5</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин C</td>
+                    <td>30</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин D</td>
+                    <td>8-10</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин E</td>
+                    <td>3</td>
+                    <td>мг</td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="table mb-4">
+                <tbody>
+                <tr>
+                    <td>
+                        <b>Минералы</b>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Кальций</td>
+                    <td>400</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Фосфор</td>
+                    <td>300</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Магний</td>
+                    <td>50-55</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Натрий</td>
+                    <td>200</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Хлориды</td>
+                    <td>300</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Железо</td>
+                    <td>4</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Цинк</td>
+                    <td>3</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Йод</td>
+                    <td>0,06</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Медь</td>
+                    <td>0,3-0,5</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Селен</td>
+                    <td>0,01-0,015</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Фтор</td>
+                    <td>1</td>
+                    <td>мг</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="2">
+            <table class="table mb-4">
+                <tbody>
+                <tr>
+                    <td>
+                        <b>Витамины</b>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Витамин A</td>
+                    <td>400</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B1</td>
+                    <td>0,4</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B2</td>
+                    <td>0,5</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B3</td>
+                    <td>6</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B5</td>
+                    <td>1,5</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B6</td>
+                    <td>0,5</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B9</td>
+                    <td>40-50</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B12</td>
+                    <td>0,4-0,5</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин C</td>
+                    <td>35</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин D</td>
+                    <td>10</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин E</td>
+                    <td>3-4</td>
+                    <td>мг</td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="table mb-4" >
+                <tbody>
+                <tr>
+                    <td>
+                        <b>Минералы</b>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Кальций</td>
+                    <td>500</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Фосфор</td>
+                    <td>400</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Магний</td>
+                    <td>60</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Натрий</td>
+                    <td>280</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Хлориды</td>
+                    <td>450</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Железо</td>
+                    <td>7</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Цинк</td>
+                    <td>3-4</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Йод</td>
+                    <td>0,06</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Медь</td>
+                    <td>0,3-0,5</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Селен</td>
+                    <td>0,012-0,015</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Фтор</td>
+                    <td>1</td>
+                    <td>мг</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="3">
+            <table class="table mb-4" >
+                <tbody>
+                <tr>
+                    <td>
+                        <b>Витамины</b>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Витамин A</td>
+                    <td>400-500</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B1</td>
+                    <td>0,5</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B2</td>
+                    <td>0,6</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B3</td>
+                    <td>4-7</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B5</td>
+                    <td>2</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B6</td>
+                    <td>0,6</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B9</td>
+                    <td>60</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B12</td>
+                    <td>0,5-0,6</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин C</td>
+                    <td>40</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин D</td>
+                    <td>10</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин E</td>
+                    <td>4-5</td>
+                    <td>мг</td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="table mb-4" >
+                <tbody>
+                <tr>
+                    <td>
+                        <b>Минералы</b>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Кальций</td>
+                    <td>600</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Фосфор</td>
+                    <td>500</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Магний</td>
+                    <td>70</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Натрий</td>
+                    <td>350</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Хлориды</td>
+                    <td>550</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Железо</td>
+                    <td>10</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Цинк</td>
+                    <td>4-7</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Йод</td>
+                    <td>0,06</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Медь</td>
+                    <td>0,3-0,5</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Селен</td>
+                    <td>0,012-0,015</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Фтор</td>
+                    <td>1,2</td>
+                    <td>мг</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="4">
+            <table class="table mb-4" >
+                <tbody>
+                <tr>
+                    <td>
+                        <b>Витамины</b>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Витамин A</td>
+                    <td>450-600</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B1</td>
+                    <td>0,8</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B2</td>
+                    <td>0,9</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B3</td>
+                    <td>8-10</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B5</td>
+                    <td>2,5</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B6</td>
+                    <td>0,9</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B9</td>
+                    <td>70-100</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B12</td>
+                    <td>0,7</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин C</td>
+                    <td>45</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин D</td>
+                    <td>10</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин E</td>
+                    <td>4-6</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин K</td>
+                    <td>30</td>
+                    <td>мкг</td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="table mb-4" >
+                <tbody>
+                <tr>
+                    <td>
+                        <b>Минералы</b>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Кальций</td>
+                    <td>800</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Фосфор</td>
+                    <td>750</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Магний</td>
+                    <td>80-100</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Калий</td>
+                    <td>400</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Натрий</td>
+                    <td>500</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Хлориды</td>
+                    <td>800</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Железо</td>
+                    <td>10</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Цинк</td>
+                    <td>5-10</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Йод</td>
+                    <td>0,07</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Медь</td>
+                    <td>0,5-0,7</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Селен</td>
+                    <td>0,015-0,030</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Хром</td>
+                    <td>11</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Фтор</td>
+                    <td>1,4</td>
+                    <td>мг</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="5">
+            <table class="table mb-4" >
+                <tbody>
+                <tr>
+                    <td>
+                        <b>Витамины</b>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Витамин A</td>
+                    <td>500-650</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B1</td>
+                    <td>0,8-0,9</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B2</td>
+                    <td>1-1,1</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B3</td>
+                    <td>11-13</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B5</td>
+                    <td>3</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B6</td>
+                    <td>1,1-1,2</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B7</td>
+                    <td>15</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B9</td>
+                    <td>80-200</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B12</td>
+                    <td>1-1,5</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин C</td>
+                    <td>50-55</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин D</td>
+                    <td>10</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин E</td>
+                    <td>7-8</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин K</td>
+                    <td>55</td>
+                    <td>мкг</td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="table mb-4" >
+                <tbody>
+                <tr>
+                    <td>
+                        <b>Минералы</b>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Кальций</td>
+                    <td>800-900</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Фосфор</td>
+                    <td>800</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Магний</td>
+                    <td>120-200</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Калий</td>
+                    <td>600</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Натрий</td>
+                    <td>700</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Хлориды</td>
+                    <td>1100</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Железо</td>
+                    <td>10-12</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Цинк</td>
+                    <td>8-10</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Йод</td>
+                    <td>0,1</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Медь</td>
+                    <td>0,6-1,5</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Селен</td>
+                    <td>0,02-0,03</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Хром</td>
+                    <td>15</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Фтор</td>
+                    <td>2</td>
+                    <td>мг</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="6">
+            <table class="table mb-4" >
+                <tbody>
+                <tr>
+                    <td>
+                        <b>Витамины</b>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Витамин A</td>
+                    <td>700</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B1</td>
+                    <td>1-1,1</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B2</td>
+                    <td>1,2</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B3</td>
+                    <td>15</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B5</td>
+                    <td>3</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B6</td>
+                    <td>1,4-1,5</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B7</td>
+                    <td>20</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B9</td>
+                    <td>100-200</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B12</td>
+                    <td>1,4-2</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин C</td>
+                    <td>60</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин D</td>
+                    <td>2,5-10</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин E</td>
+                    <td>10</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин K</td>
+                    <td>60</td>
+                    <td>мкг</td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="table mb-4" >
+                <tbody>
+                <tr>
+                    <td>
+                        <b>Минералы</b>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Кальций</td>
+                    <td>1000-1100</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Фосфор</td>
+                    <td>1000-1100</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Магний</td>
+                    <td>170-250</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Калий</td>
+                    <td>900</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Натрий</td>
+                    <td>1000</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Хлориды</td>
+                    <td>1700</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Железо</td>
+                    <td>12</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Цинк</td>
+                    <td>10</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Йод</td>
+                    <td>0,12</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Медь</td>
+                    <td>0,7-1,5</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Селен</td>
+                    <td>0,03</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Хром</td>
+                    <td>15</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Фтор</td>
+                    <td>3</td>
+                    <td>мг</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="7m">
+            <table class="table mb-4" >
+                <tbody>
+                <tr>
+                    <td>
+                        <b>Витамины</b>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Витамин A</td>
+                    <td>1000</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B1</td>
+                    <td>1,3</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B2</td>
+                    <td>1,5</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B3</td>
+                    <td>17-18</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B5</td>
+                    <td>3,5</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B6</td>
+                    <td>1,7</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B7</td>
+                    <td>25</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B9</td>
+                    <td>160-400</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B12</td>
+                    <td>2-3</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин C</td>
+                    <td>70-75</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин D</td>
+                    <td>2,5-10</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин E</td>
+                    <td>12-13</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин K</td>
+                    <td>80</td>
+                    <td>мкг</td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="table mb-4" >
+                <tbody>
+                <tr>
+                    <td>
+                        <b>Минералы</b>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Кальций</td>
+                    <td>1200</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Фосфор</td>
+                    <td>1200</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Магний</td>
+                    <td>300</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Калий</td>
+                    <td>1500</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Натрий</td>
+                    <td>1100</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Хлориды</td>
+                    <td>1900</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Железо</td>
+                    <td>12</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Цинк</td>
+                    <td>12-15</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Йод</td>
+                    <td>0,13</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Медь</td>
+                    <td>0,8-2</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Селен</td>
+                    <td>0,04</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Хром</td>
+                    <td>25</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Фтор</td>
+                    <td>4</td>
+                    <td>мг</td>
+                </tr>
+                </tbody>
+            </table>
+            <div style="clear:both; margin-top:0em; margin-bottom:1em;"><a href="https://mnogo-sil.ru/calculators/izyashhestvo-figury/" target="_blank" rel="nofollow" class="u020a9583478ac5d645cf1e5dd7f53fa7"><!-- INLINE RELATED POSTS 1/2 //--><style> .u020a9583478ac5d645cf1e5dd7f53fa7 { padding:0px; margin: 0; padding-top:1em!important; padding-bottom:1em!important; width:100%; display: block; font-weight:bold; background-color:#eaeaea; border:0!important; border-left:4px solid #2C3E50!important; text-decoration:none; } .u020a9583478ac5d645cf1e5dd7f53fa7:active, .u020a9583478ac5d645cf1e5dd7f53fa7:hover { opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; text-decoration:none; } .u020a9583478ac5d645cf1e5dd7f53fa7 { transition: background-color 250ms; webkit-transition: background-color 250ms; opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; } .u020a9583478ac5d645cf1e5dd7f53fa7 .ctaText { font-weight:bold; color:#2C3E50; text-decoration:none; font-size: 16px; } .u020a9583478ac5d645cf1e5dd7f53fa7 .postTitle { color:#34495E; text-decoration: underline!important; font-size: 16px; } .u020a9583478ac5d645cf1e5dd7f53fa7:hover .postTitle { text-decoration: underline!important; } </style><div style="padding-left:1em; padding-right:1em;"><span class="ctaText">Читайте также: </span>&nbsp; <span class="postTitle">Изящество фигуры</span></div></a></div></div>
+        <div id="7f">
+            <table class="table mb-4" >
+                <tbody>
+                <tr>
+                    <td>
+                        <b>Витамины</b>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Витамин A</td>
+                    <td>800</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B1</td>
+                    <td>1,1-1,3</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B2</td>
+                    <td>1,3-1,5</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B3</td>
+                    <td>15-18</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B5</td>
+                    <td>3,5</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B6</td>
+                    <td>1,4-1,6</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B7</td>
+                    <td>25</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B9</td>
+                    <td>150-400</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B12</td>
+                    <td>2-3</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин C</td>
+                    <td>60-70</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин D</td>
+                    <td>2,5-10</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин E</td>
+                    <td>10-12</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин K</td>
+                    <td>70</td>
+                    <td>мкг</td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="table mb-4" >
+                <tbody>
+                <tr>
+                    <td>
+                        <b>Минералы</b>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Кальций</td>
+                    <td>1200</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Фосфор</td>
+                    <td>1200</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Магний</td>
+                    <td>270-300</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Калий</td>
+                    <td>1500</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Натрий</td>
+                    <td>1100</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Хлориды</td>
+                    <td>1900</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Железо</td>
+                    <td>15</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Цинк</td>
+                    <td>12</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Йод</td>
+                    <td>0,15</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Медь</td>
+                    <td>0,8-1,5</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Селен</td>
+                    <td>0,04-0,045</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Хром</td>
+                    <td>25</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Фтор</td>
+                    <td>4</td>
+                    <td>мг</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="8m">
+            <table class="table mb-4" >
+                <tbody>
+                <tr>
+                    <td>
+                        <b>Витамины</b>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Витамин A</td>
+                    <td>1000</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B1</td>
+                    <td>1,5</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B2</td>
+                    <td>1,8</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B3</td>
+                    <td>20</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B5</td>
+                    <td>5</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B6</td>
+                    <td>2</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B7</td>
+                    <td>50</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B9</td>
+                    <td>200-400</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B12</td>
+                    <td>2-3</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин C</td>
+                    <td>80-90</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин D</td>
+                    <td>2,5-10</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин E</td>
+                    <td>15</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин K</td>
+                    <td>65-120</td>
+                    <td>мкг</td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="table mb-4" >
+                <tbody>
+                <tr>
+                    <td>
+                        <b>Минералы</b>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Кальций</td>
+                    <td>1200</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Фосфор</td>
+                    <td>1200</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Магний</td>
+                    <td>400</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Калий</td>
+                    <td>2500</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Натрий</td>
+                    <td>1300</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Хлориды</td>
+                    <td>2300</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Железо</td>
+                    <td>12-15</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Цинк</td>
+                    <td>12-15</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Йод</td>
+                    <td>0,15</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Медь</td>
+                    <td>1-2,5</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Селен</td>
+                    <td>0,05</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Хром</td>
+                    <td>35</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Фтор</td>
+                    <td>4</td>
+                    <td>мг</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="8f">
+            <table class="table mb-4" >
+                <tbody>
+                <tr>
+                    <td>
+                        <b>Витамины</b>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Витамин A</td>
+                    <td>800-1000</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B1</td>
+                    <td>1,2-1,3</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B2</td>
+                    <td>1,5</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B3</td>
+                    <td>17-18</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B5</td>
+                    <td>4</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B6</td>
+                    <td>1,5-1,6</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B7</td>
+                    <td>50</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B9</td>
+                    <td>180-400</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B12</td>
+                    <td>2-3</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин C</td>
+                    <td>70-75</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин D</td>
+                    <td>2,5-10</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин E</td>
+                    <td>13-15</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин K</td>
+                    <td>55-100</td>
+                    <td>мкг</td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="table mb-4" >
+                <tbody>
+                <tr>
+                    <td>
+                        <b>Минералы</b>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Кальций</td>
+                    <td>1200</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Фосфор</td>
+                    <td>1200</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Магний</td>
+                    <td>300-400</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Калий</td>
+                    <td>2500</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Натрий</td>
+                    <td>1300</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Хлориды</td>
+                    <td>2300</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Железо</td>
+                    <td>15-18</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Цинк</td>
+                    <td>12-13</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Йод</td>
+                    <td>0,15</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Медь</td>
+                    <td>1-2</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Селен</td>
+                    <td>0,05</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Хром</td>
+                    <td>35</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Фтор</td>
+                    <td>4</td>
+                    <td>мг</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="9m">
+            <table class="table mb-4" >
+                <tbody>
+                <tr>
+                    <td>
+                        <b>Витамины</b>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Витамин A</td>
+                    <td>900-1000</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B1</td>
+                    <td>1,5-1,6</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B2</td>
+                    <td>1,8-2</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B3</td>
+                    <td>20-22</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B5</td>
+                    <td>5</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B6</td>
+                    <td>2</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B7</td>
+                    <td>50</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B9</td>
+                    <td>250-400</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B12</td>
+                    <td>3</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин C</td>
+                    <td>80-90</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин D</td>
+                    <td>2,5-10</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин E</td>
+                    <td>15</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин K</td>
+                    <td>120</td>
+                    <td>мкг</td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="table mb-4" >
+                <tbody>
+                <tr>
+                    <td>
+                        <b>Минералы</b>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Кальций</td>
+                    <td>1000-1200</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Фосфор</td>
+                    <td>800-1200</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Магний</td>
+                    <td>400</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Калий</td>
+                    <td>2500</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Натрий</td>
+                    <td>1300</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Хлориды</td>
+                    <td>2300</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Железо</td>
+                    <td>10-15</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Цинк</td>
+                    <td>12-15</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Йод</td>
+                    <td>150</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Медь</td>
+                    <td>1</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Марганец</td>
+                    <td>2</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Селен</td>
+                    <td>70</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Хром</td>
+                    <td>50</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Молибден</td>
+                    <td>70</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Фтор</td>
+                    <td>0,75-4</td>
+                    <td>мг</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="9f">
+            <table class="table mb-4" >
+                <tbody>
+                <tr>
+                    <td>
+                        <b>Витамины</b>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Витамин A</td>
+                    <td>900-1000</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B1</td>
+                    <td>1,3-1,5</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B2</td>
+                    <td>1,6-1,8</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B3</td>
+                    <td>16-20</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B5</td>
+                    <td>5</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B6</td>
+                    <td>1,8-2</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B7</td>
+                    <td>50</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B9</td>
+                    <td>200-400</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B12</td>
+                    <td>3</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин C</td>
+                    <td>70-90</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин D</td>
+                    <td>2,5-10</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин E</td>
+                    <td>15</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин K</td>
+                    <td>120</td>
+                    <td>мкг</td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="table mb-4" >
+                <tbody>
+                <tr>
+                    <td>
+                        <b>Минералы</b>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Кальций</td>
+                    <td>1000-1100</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Фосфор</td>
+                    <td>800-1200</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Магний</td>
+                    <td>350-400</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Калий</td>
+                    <td>2500</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Натрий</td>
+                    <td>1300</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Хлориды</td>
+                    <td>2300</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Железо</td>
+                    <td>17-18</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Цинк</td>
+                    <td>12</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Йод</td>
+                    <td>150</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Медь</td>
+                    <td>1</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Марганец</td>
+                    <td>2</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Селен</td>
+                    <td>50-55</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Хром</td>
+                    <td>50</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Молибден</td>
+                    <td>70</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Фтор</td>
+                    <td>0,75-4</td>
+                    <td>мг</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="9fp">
+            <table class="table mb-4" >
+                <tbody>
+                <tr>
+                    <td>
+                        <b>Витамины</b>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Витамин A</td>
+                    <td>1000-1100</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B1</td>
+                    <td>1,5-1,7</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B2</td>
+                    <td>1,8-2</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B3</td>
+                    <td>18-22</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B5</td>
+                    <td>6,0</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B6</td>
+                    <td>2-2,2</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B7</td>
+                    <td>50</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B9</td>
+                    <td>400-600</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B12</td>
+                    <td>3,5</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин C</td>
+                    <td>80-100</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин D</td>
+                    <td>5-12</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин E</td>
+                    <td>17</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин K</td>
+                    <td>120</td>
+                    <td>мкг</td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="table mb-4" >
+                <tbody>
+                <tr>
+                    <td>
+                        <b>Минералы</b>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Кальций</td>
+                    <td>1200-1300</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Фосфор</td>
+                    <td>1000-1300</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Магний</td>
+                    <td>400-450</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Калий</td>
+                    <td>2500</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Натрий</td>
+                    <td>1300</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Хлориды</td>
+                    <td>2300</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Железо</td>
+                    <td>20-30</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Цинк</td>
+                    <td>15</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Йод</td>
+                    <td>200</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Медь</td>
+                    <td>1,1</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Марганец</td>
+                    <td>2,2</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Селен</td>
+                    <td>55-65</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Хром</td>
+                    <td>50</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Молибден</td>
+                    <td>70</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Фтор</td>
+                    <td>0,75-4</td>
+                    <td>мг</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="9fl">
+            <table class="table mb-4" >
+                <tbody>
+                <tr>
+                    <td>
+                        <b>Витамины</b>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Витамин A</td>
+                    <td>1300-1400</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B1</td>
+                    <td>1,6-1,8</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B2</td>
+                    <td>1,9-2,1</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B3</td>
+                    <td>19-22</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B5</td>
+                    <td>7,0</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B6</td>
+                    <td>2-2,5</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B7</td>
+                    <td>50</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B9</td>
+                    <td>300-500</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B12</td>
+                    <td>3,5</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин C</td>
+                    <td>100-120</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин D</td>
+                    <td>5-12</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин E</td>
+                    <td>15</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин K</td>
+                    <td>120</td>
+                    <td>мкг</td>
+                </tr>
+                </tbody>
+            </table>
+            <div style="clear:both; margin-top:0em; margin-bottom:1em;"><a href="https://mnogo-sil.ru/calculators/podem-shtangi/" target="_blank" rel="nofollow" class="u5517fc4738511b055a479ca0e5389555"><!-- INLINE RELATED POSTS 2/2 //--><style> .u5517fc4738511b055a479ca0e5389555 { padding:0px; margin: 0; padding-top:1em!important; padding-bottom:1em!important; width:100%; display: block; font-weight:bold; background-color:#eaeaea; border:0!important; border-left:4px solid #2C3E50!important; text-decoration:none; } .u5517fc4738511b055a479ca0e5389555:active, .u5517fc4738511b055a479ca0e5389555:hover { opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; text-decoration:none; } .u5517fc4738511b055a479ca0e5389555 { transition: background-color 250ms; webkit-transition: background-color 250ms; opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; } .u5517fc4738511b055a479ca0e5389555 .ctaText { font-weight:bold; color:#2C3E50; text-decoration:none; font-size: 16px; } .u5517fc4738511b055a479ca0e5389555 .postTitle { color:#34495E; text-decoration: underline!important; font-size: 16px; } .u5517fc4738511b055a479ca0e5389555:hover .postTitle { text-decoration: underline!important; } </style><div style="padding-left:1em; padding-right:1em;"><span class="ctaText">Читайте также: </span>&nbsp; <span class="postTitle">Подъем штанги</span></div></a></div><table class="table mb-4" >
+            <tbody>
+            <tr>
+                <td>
+                    <b>Минералы</b>
+                </td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Кальций</td>
+                <td>1400-1500</td>
+                <td>мг</td>
+            </tr>
+            <tr>
+                <td>Фосфор</td>
+                <td>1000-1400</td>
+                <td>мг</td>
+            </tr>
+            <tr>
+                <td>Магний</td>
+                <td>400-450</td>
+                <td>мг</td>
+            </tr>
+            <tr>
+                <td>Калий</td>
+                <td>2500</td>
+                <td>мг</td>
+            </tr>
+            <tr>
+                <td>Натрий</td>
+                <td>1300</td>
+                <td>мг</td>
+            </tr>
+            <tr>
+                <td>Хлориды</td>
+                <td>2300</td>
+                <td>мг</td>
+            </tr>
+            <tr>
+                <td>Железо</td>
+                <td>17-18</td>
+                <td>мг</td>
+            </tr>
+            <tr>
+                <td>Цинк</td>
+                <td>15</td>
+                <td>мг</td>
+            </tr>
+            <tr>
+                <td>Йод</td>
+                <td>280</td>
+                <td>мкг</td>
+            </tr>
+            <tr>
+                <td>Медь</td>
+                <td>1,4</td>
+                <td>мг</td>
+            </tr>
+            <tr>
+                <td>Марганец</td>
+                <td>2,8</td>
+                <td>мг</td>
+            </tr>
+            <tr>
+                <td>Селен</td>
+                <td>60-65</td>
+                <td>мкг</td>
+            </tr>
+            <tr>
+                <td>Хром</td>
+                <td>50</td>
+                <td>мкг</td>
+            </tr>
+            <tr>
+                <td>Молибден</td>
+                <td>70</td>
+                <td>мкг</td>
+            </tr>
+            <tr>
+                <td>Фтор</td>
+                <td>0,75-4</td>
+                <td>мг</td>
+            </tr>
+            </tbody>
+        </table>
+        </div>
+        <div id="10m">
+            <table class="table mb-4" >
+                <tbody>
+                <tr>
+                    <td>
+                        <b>Витамины</b>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Витамин A</td>
+                    <td>900-1000</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B1</td>
+                    <td>1,5-1,7</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B2</td>
+                    <td>1,7-1,8</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B3</td>
+                    <td>15-20</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B5</td>
+                    <td>5</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B6</td>
+                    <td>2</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B7</td>
+                    <td>50</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B9</td>
+                    <td>250-400</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B12</td>
+                    <td>3</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин C</td>
+                    <td>90-100</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин D</td>
+                    <td>2,5-15</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин E</td>
+                    <td>15-25</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин K</td>
+                    <td>120</td>
+                    <td>мкг</td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="table mb-4" >
+                <tbody>
+                <tr>
+                    <td>
+                        <b>Минералы</b>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Кальций</td>
+                    <td>800-1200</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Фосфор</td>
+                    <td>800-1200</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Магний</td>
+                    <td>400</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Калий</td>
+                    <td>2500</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Натрий</td>
+                    <td>1300</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Хлориды</td>
+                    <td>2300</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Железо</td>
+                    <td>10-15</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Цинк</td>
+                    <td>12-15</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Йод</td>
+                    <td>150</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Медь</td>
+                    <td>1</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Марганец</td>
+                    <td>2</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Селен</td>
+                    <td>70</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Хром</td>
+                    <td>50</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Молибден</td>
+                    <td>70</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Фтор</td>
+                    <td>0,75-4</td>
+                    <td>мг</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="10f">
+            <table class="table mb-4" >
+                <tbody>
+                <tr>
+                    <td>
+                        <b>Витамины</b>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Витамин A</td>
+                    <td>1000</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B1</td>
+                    <td>1,5</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B2</td>
+                    <td>1,5-1,8</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B3</td>
+                    <td>13-20</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B5</td>
+                    <td>5</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B6</td>
+                    <td>2-3</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B7</td>
+                    <td>50</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B9</td>
+                    <td>230-400</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B12</td>
+                    <td>3</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин C</td>
+                    <td>90-100</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин D</td>
+                    <td>2,5-15</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин E</td>
+                    <td>15-20</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин K</td>
+                    <td>120</td>
+                    <td>мкг</td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="table mb-4" >
+                <tbody>
+                <tr>
+                    <td>
+                        <b>Минералы</b>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Кальций</td>
+                    <td>1000-1200</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Фосфор</td>
+                    <td>800-1200</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Магний</td>
+                    <td>350-400</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Калий</td>
+                    <td>2500</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Натрий</td>
+                    <td>1300</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Хлориды</td>
+                    <td>2300</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Железо</td>
+                    <td>15-18</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Цинк</td>
+                    <td>12-15</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Йод</td>
+                    <td>150</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Медь</td>
+                    <td>1</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Марганец</td>
+                    <td>2</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Селен</td>
+                    <td>50-55</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Хром</td>
+                    <td>50</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Молибден</td>
+                    <td>70</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Фтор</td>
+                    <td>0,75-4</td>
+                    <td>мг</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="11m">
+            <table class="table mb-4" >
+                <tbody>
+                <tr>
+                    <td>
+                        <b>Витамины</b>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Витамин A</td>
+                    <td>900-1000</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B1</td>
+                    <td>1,5</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B2</td>
+                    <td>1,5-1,8</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B3</td>
+                    <td>13-20</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B5</td>
+                    <td>5</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B6</td>
+                    <td>2-3</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B7</td>
+                    <td>50</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B9</td>
+                    <td>230-400</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B12</td>
+                    <td>3</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин C</td>
+                    <td>90</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин D</td>
+                    <td>2,5-15</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин E</td>
+                    <td>15-20</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин K</td>
+                    <td>120</td>
+                    <td>мкг</td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="table mb-4" >
+                <tbody>
+                <tr>
+                    <td>
+                        <b>Минералы</b>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Кальций</td>
+                    <td>800-1200</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Фосфор</td>
+                    <td>800-1200</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Магний</td>
+                    <td>400</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Калий</td>
+                    <td>2500</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Натрий</td>
+                    <td>1300</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Хлориды</td>
+                    <td>2300</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Железо</td>
+                    <td>10-15</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Цинк</td>
+                    <td>12-15</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Йод</td>
+                    <td>150</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Медь</td>
+                    <td>1</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Марганец</td>
+                    <td>2</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Селен</td>
+                    <td>70</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Хром</td>
+                    <td>50</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Молибден</td>
+                    <td>70</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Фтор</td>
+                    <td>0,75-4</td>
+                    <td>мг</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="11f">
+            <table class="table mb-4" >
+                <tbody>
+                <tr>
+                    <td>
+                        <b>Витамины</b>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Витамин A</td>
+                    <td>1000</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B1</td>
+                    <td>1,5</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B2</td>
+                    <td>1,5-1,8</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B3</td>
+                    <td>13-20</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B5</td>
+                    <td>5</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B6</td>
+                    <td>2-3</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B7</td>
+                    <td>50</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B9</td>
+                    <td>230-400</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин B12</td>
+                    <td>3</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин C</td>
+                    <td>90</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин D</td>
+                    <td>2,5-15</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Витамин E</td>
+                    <td>15-20</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Витамин K</td>
+                    <td>120</td>
+                    <td>мкг</td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="table mb-4">
+                <tbody>
+                <tr>
+                    <td>
+                        <b>Минералы</b>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Кальций</td>
+                    <td>1000-1200</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Фосфор</td>
+                    <td>800-1200</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Магний</td>
+                    <td>400</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Калий</td>
+                    <td>2500</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Натрий</td>
+                    <td>1300</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Хлориды</td>
+                    <td>2300</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Железо</td>
+                    <td>15-18</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Цинк</td>
+                    <td>12-15</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Йод</td>
+                    <td>150</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Медь</td>
+                    <td>1</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Марганец</td>
+                    <td>2</td>
+                    <td>мг</td>
+                </tr>
+                <tr>
+                    <td>Селен</td>
+                    <td>50-55</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Хром</td>
+                    <td>50</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Молибден</td>
+                    <td>70</td>
+                    <td>мкг</td>
+                </tr>
+                <tr>
+                    <td>Фтор</td>
+                    <td>0,75-4</td>
+                    <td>мг</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script src="/js/calc_7.js"></script>
